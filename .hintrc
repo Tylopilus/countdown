@@ -1,0 +1,10 @@
+{
+  "hints": {
+    "no-inline-styles": [
+      "error",
+      {
+        "requireNoStyleElement": false
+      }
+    ]
+  }
+}
