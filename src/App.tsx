@@ -22,6 +22,11 @@ function App() {
 }
 
 const SetTimer = () => {
+  // state
+  const [time, setTime] = useState("00:00:00");
+  const [msg, setMessage] = useState("Short break! Back in..");
+
+  // helpers
   function dateFromStr(date: string) {
     let tempTime = date.split(":");
     let dt = new Date();
@@ -37,9 +42,6 @@ const SetTimer = () => {
     const timeDiff = new Date(tmp).toISOString().substring(11, 19);
     return timeDiff;
   };
-
-  const [time, setTime] = useState("00:00:00");
-  const [msg, setMessage] = useState("Short break! Back in..");
 
   return (
     <div className="wrapper-timer">
@@ -80,10 +82,12 @@ const SetTimer = () => {
 };
 
 const CounterWrapper = ({ time, msg }: { time: string; msg: string }) => {
+  // state
   const totalSecs = time.split(":").reduce((acc, time) => 60 * acc + +time, 0);
   const [count, setCount] = useState(totalSecs);
   const interval = useRef<ReturnType<typeof setTimeout>>();
 
+  // effects
   useEffect(() => {
     interval.current = setInterval(() => {
       setCount((count) => count - 1);
@@ -91,6 +95,7 @@ const CounterWrapper = ({ time, msg }: { time: string; msg: string }) => {
     return () => clearInterval(interval.current);
   }, []);
 
+  // helpers
   if (count < 0) {
     clearTimeout(interval.current);
     setCount(0);

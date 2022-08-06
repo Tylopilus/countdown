@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import "./counter.css";
 
+// types
 type Variant = "hours" | "minutes" | "seconds";
 enum VariantEnum {
   hours = 24 * 60 * 60,
@@ -9,6 +10,7 @@ enum VariantEnum {
 }
 
 const Counter = ({ value, variant }: { value: number; variant: Variant }) => {
+  // state
   const circle = useRef<SVGCircleElement>(null);
   let displayValue = value % 60;
 
@@ -18,6 +20,7 @@ const Counter = ({ value, variant }: { value: number; variant: Variant }) => {
     displayValue = Math.floor((60 * value) / VariantEnum.minutes) % 60;
   }
 
+  // effects
   useEffect(() => {
     if (!circle.current) return;
     const length =
