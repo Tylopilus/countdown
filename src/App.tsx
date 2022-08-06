@@ -64,7 +64,7 @@ const SetTimer = () => {
             location.href = `/?time=${time}&msg=${msg}`;
           }}
         >
-          Set Timer
+          Set Countdown
         </button>
         <span>or</span>
         <button
@@ -72,7 +72,7 @@ const SetTimer = () => {
             location.href = `/?time=${time}&msg=${msg}`;
           }}
         >
-          Set Countdown
+          Set Timer
         </button>
       </div>
     </div>
