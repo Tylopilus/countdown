@@ -22,9 +22,9 @@ svg {
   transform: rotate(-90deg);
   z-index: 1;
 }
-.wrapper {
+/* .wrapper {
   display: flex;
   gap: 4rem;
   margin: 0 auto;
   justify-content: center;
-}
+} */

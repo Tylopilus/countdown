@@ -1,11 +1,50 @@
 .App {
-  transform: translateY(-50%);
 }
-.App > h1 {
+h1 {
   text-align: center;
 }
 
 a {
   color: hsl(0, 0%, 40%);
   text-decoration: none;
+}
+
+.counter {
+  display: grid;
+  gap: 1rem;
+  grid-template-areas:
+    "title title title"
+    "counter counter counter"
+    "label label label"
+    "reset reset reset";
+}
+
+.counter > h1 {
+  grid-area: title;
+}
+.counter > .wrapper {
+  display: grid;
+  grid-area: counter;
+  grid-template-columns: repeat(3, 160px);
+  gap: inherit;
+  margin: 0 auto;
+}
+
+.counter > .wrapper > .item {
+}
+
+.counter > .reset {
+  grid-area: reset;
+  text-align: center;
+  margin: 1rem auto;
+}
+
+.counter > .label {
+  display: grid;
+  grid-template-columns: repeat(3, 160px);
+  gap: inherit;
+  grid-area: label;
+  margin: -1rem auto;
+  text-align: center;
+  font-size: 1.2rem;
 }

@@ -102,17 +102,22 @@ const CounterWrapper = ({ time, msg }: { time: string; msg: string }) => {
   }
 
   return (
-    <>
+    <div className="counter">
       <h1>{msg}</h1>
       <div className="wrapper">
         <Counter value={count} variant="hours" />
         <Counter value={count} variant="minutes" />
         <Counter value={count} variant="seconds" />
       </div>
-      <div className="wrapper">
+      <div className="label">
+        <span>Hours</span>
+        <span>Minutes</span>
+        <span>Seconds</span>
+      </div>
+      <div className="reset">
         <a href="/">reset</a>
       </div>
-    </>
+    </div>
   );
 };
 
